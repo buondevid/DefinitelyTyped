@@ -31,7 +31,7 @@ export interface Range {
 }
 
 export interface RangeKeyDict {
-    [key: string]: Range;
+    [key: string]: Omit<Range, 'startDate' | 'endDate'> & Required<Pick<Range, 'startDate' | 'endDate'>>;
 }
 
 export type Preview = Pick<Range, 'startDate' | 'endDate' | 'color'>;
